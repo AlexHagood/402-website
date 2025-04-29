@@ -92,24 +92,63 @@
         }
         
         /* Specific section styles */
+
         .section-dont-scene {
-            background-color: #c23b33;
+            background: url("./front.jpg") center/cover fixed no-repeat;
+            position: relative;
         }
+
+        .section-dont-scene::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(194, 59, 51, 0.7);
+            z-index: 1;
+        }
+            
         
+
         .section-do-human {
-            background-color: #f5f5f5;
+            background: url("./pinning.jpg") center/cover fixed no-repeat;
+            position: relative;
+        }
+
+        .section-do-human::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(245, 245, 245, 0.7);
+            z-index: 1;
         }
         
+
         .section-dont-stereotype {
-            background-color: #1a4e94;
+            background: url("./water.jpg") center/cover fixed no-repeat;
+            position: relative;
+        }
+
+        .section-dont-stereotype::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 78, 148, 0.7);
+            z-index: 1;
         }
         
         .section-stats {
-            background: url("/api/placeholder/1920/1080") center/cover fixed no-repeat;
-            color: white;
+            background: url("./run.jpg") center/cover fixed no-repeat;
             position: relative;
         }
-        
+
         .section-stats::before {
             content: '';
             position: absolute;
@@ -117,7 +156,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(100, 100, 100, 0.7);
             z-index: 1;
         }
         
@@ -320,6 +359,29 @@
             <div class="source-item">
                 <p>3. Multiple Veteran interviews.</p>
             </div>
+
+            <div class="source-item">
+            All images are sourced from US Military photographers and are public domain. Photos are cited in order of appearance
+            </div>
+            
+
+
+            <div class="source-item">
+                <p>Rosenthal, Joe. Raising the Flag on Iwo Jima. 1945. Photograph. Public domain. Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:Raising_the_Flag_on_Iwo_Jima,_larger.jpeg">https://commons.wikimedia.org/wiki/File:Raising_the_Flag_on_Iwo_Jima,_larger.jpeg</a>.</p>
+            </div>
+
+            <div class="source-item">
+                <p>Nunnenkamp, Jacob. Dynamic Front Partners. Photograph. Public domain. Army Photos. <a href="https://www.army.mil/photos">https://www.army.mil/photos</a>.</p>
+            </div>
+
+            <div class="source-item">
+                <p>Garcia, Hunter. Water Infiltration. Photograph. Public domain. Army Photos. <a href="https://www.army.mil/photos">https://www.army.mil/photos</a>.</p>
+            </div>
+
+            <div class="source-item">
+                <p>Edwards, Duke. Salute to Summer: Division Run. Photograph. Public domain. Army Photos. <a href="https://www.army.mil/photos">https://www.army.mil/photos</a>.</p>
+            </div>
+
         </div>
     </section>
 
