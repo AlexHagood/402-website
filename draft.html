@@ -1,0 +1,367 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respecting Veterans in Your Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2 {
+            font-weight: bold;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url("./iwojima.jpg") center/cover fixed no-repeat;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 42, 109, 0.85);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Content sections */
+        .section {
+            min-height: 50vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section h2 {
+            color: #111;
+            font-size: 2rem;
+            margin-bottom: 1.0rem;
+            text-align: center;
+        }
+        
+        /* Specific section styles */
+        .section-dont-scene {
+            background-color: #c23b33;
+        }
+        
+        .section-do-human {
+            background-color: #f5f5f5;
+        }
+        
+        .section-dont-stereotype {
+            background-color: #1a4e94;
+        }
+        
+        .section-stats {
+            background: url("/api/placeholder/1920/1080") center/cover fixed no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .section-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        /* Stat display */
+        .stat-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: black
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: black
+        }
+        
+        /* Sources section */
+        .sources {
+            background-color: #333;
+            color: #ddd;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .sources h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .source-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .source-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .source-item a {
+            color: #6d9eeb;
+            text-decoration: none;
+        }
+        
+        .source-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #6d9eeb;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#dont-scene">Don't Make a Scene</a></li>
+            <li><a href="#do-human">Remember They're Human</a></li>
+            <li><a href="#dont-stereotype">Don't Stereotype</a></li>
+            <li><a href="#stats">Statistics</a></li>
+            <li><a href="#sources">Sources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Appropriately Showing Respect to Veterans in your Community</h1>
+            <p>Guidelines for honoring those who served while respecting their individuality and humanity</p>
+        </div>
+    </section>
+
+    <!-- Don't Make a Scene Section -->
+    <section id="dont-scene" class="section section-dont-scene">
+        <div class="content-box">
+            <h2>DON'T: Make a Scene</h2>
+            <p>Don't call attention to a veteran's status to others in media or another circumstance unless given explicit permission. <a href="#sources">[3]</a></p>
+            <p>Many veterans prefer privacy regarding their service and may feel uncomfortable when publicly identified without consent.</p>
+        </div>
+    </section>
+
+    <!-- Remember They're Human Section -->
+    <section id="do-human" class="section section-do-human">
+        <div class="content-box">
+            <h2>DO: Remember They're Human</h2>
+            <p>A veteran isn't just a veteran, they are a human being with feelings and have experiences different to that of civilians. <a href="#sources">[3]</a></p>
+            <p>Engage with veterans as complete individuals with unique personalities, interests, and needs beyond their military service.
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Don't Stereotype Section -->
+    <section id="dont-stereotype" class="section section-dont-stereotype">
+        <div class="content-box">
+            <h2>DON'T: Stereotype</h2>
+            <p>Not all veterans have PTSD or are war heroes <a href="#sources">[1]</a>. But all deserve our kindness.</p>
+            <p>Avoid making assumptions about a veteran's political views, experiences, or mental health based solely on their veteran status.</p>
+        </div>
+    </section>
+
+    <!-- Statistics Section with Parallax -->
+    <section id="stats" class="section section-stats">
+        <div class="content-box">
+            <h2>Veteran Demographics <a href="#sources">[2]</a> </h2>
+            <div class="stat-container">
+                <div class="stat-item">
+                    <div class="stat-number">18+ Million</div>
+                    <div class="stat-label">Veterans living in the USA today</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Served during wartime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">22%</div>
+                    <div class="stat-label">Served during peacetime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources Section -->
+    <section id="sources" class="sources">
+        <h2>Sources</h2>
+        <div class="source-list">
+            <div class="source-item">
+                <p>1. Miller, M. Veterans in the Workplace Face Unwelcome Hero Worship. <a href="https://www.uscnews/articles/2022/10/veterans-in-the-workplace-face-unwelcome-hero-worship.html" target="_blank">https://www.uscnews/articles/2022/10/veterans-in-the-workplace-face-unwelcome-hero-worship.html</a> (accessed 2025-03-25).</p>
+            </div>
+            <div class="source-item">
+                <p>2. Schaeffer, K. The Changing Face of America's Veteran Population. <a href="https://www.pewresearch.org/short-reads/2023/11/08/the-changing-face-of-americas-veteran-population/" target="_blank">https://www.pewresearch.org/short-reads/2023/11/08/the-changing-face-of-americas-veteran-population/</a> (accessed 2025-03-25).</p>
+            </div>
+            <div class="source-item">
+                <p>3. Multiple Veteran interviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Parallax effect for scrolling
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Apply parallax effect to sections with background images
+            const parallaxSections = document.querySelectorAll('.section-stats, .hero');
+            parallaxSections.forEach(section => {
+                const scrollPosition = window.pageYOffset;
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition > sectionTop - window.innerHeight && 
+                    scrollPosition < sectionTop + sectionHeight) {
+                    const speed = 0.5;
+                    const yPos = -(scrollPosition - sectionTop) * speed;
+                    section.style.backgroundPositionY = yPos + 'px';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
